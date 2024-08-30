@@ -13,7 +13,7 @@ export const get = async <T extends Params>(request: Request, data: T[]) => {
   if (slug) {
     const match = data.find((p) => p.slug === slug);
     if (match) {
-      return NextResponse.json(match);
+      return NextResponse.json([match]);
     }
     return notFound();
   }
