@@ -15,6 +15,7 @@ export type Photo = {
   width: string | number;
   height: string | number;
   blurDataURL?: string;
+  src: string;
 };
 
 export const getPhotos = async (slug?: string) => {
@@ -50,6 +51,7 @@ const getPhotoData = async (path: string): Promise<Photo> => {
     width: exifrData.ExifImageWidth, // Does not provide correct dimension
     height: exifrData.ExifImageHeight, // Does not provide correct dimension
     blurDataURL,
+    src: `https://data.bapairaew.com/photos/${slug}.jpeg`,
   };
 
   return data;
